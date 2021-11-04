@@ -13,6 +13,14 @@ public class MainController {
     public ModelAndView main() {
         ModelAndView mav = new ModelAndView();
 
+        // if 로그인 여부 체크 (미로그인 시 return false 처리)
+
+        // 메인 이미지 데이터 조회
+
+        // 공지 게시글 조회
+
+        // 블로그 게시글 리스트로 조회
+
         mav.setViewName("thymeleaf/blog/main");
 
         return mav;
@@ -21,6 +29,12 @@ public class MainController {
     @GetMapping("/view")
     public ModelAndView view() {
         ModelAndView mav = new ModelAndView();
+
+        // if 로그인 여부 체크 (미로그인 시 return false 처리)
+
+        // 블로그 게시물 내용 조회
+
+        // 블로그 게시물에 해당하는 댓글 조회
 
         mav.setViewName("thymeleaf/blog/view");
 

@@ -1,19 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+<style>
+    ul > li:hover {
+        background-color: #e5e5e5;
+    }
+</style>
 <div style="z-index: 30;">
-    <div class="outside" style="position: fixed;z-index: 30;">
-        <div class="inside">
-            <ul class="menu">
-                <li><span class="fa fa-dashboard"></span> Home</li>
-                <li><span class="fa fa-shopping-basket"></span> Shop</li>
-                <li><span class="fa fa-shopping-cart"></span> Cart</li>
-                <li><span class="fa fa-info-circle"></span> Info</li>
-                <li><span class="fa fa-credit-card"></span> Payments</li>
-                <li><span class="fa fa-leaf"></span> Support</li>
-            </ul>
-        </div>
-<!--        <button id="closeBtn" class="close">닫기</button>-->
-    </div>
     <div class="container">
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
@@ -22,21 +14,31 @@
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <a class="link-secondary" href="#" aria-label="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                             viewBox="0 0 24 24"><title>Search</title>
                             <circle cx="10.5" cy="10.5" r="7.5"></circle>
                             <path d="M21 21l-5.2-5.2"></path>
                         </svg>
                     </a>
-                    <!--<button id="sideMenuBtn" class="close is-showing"><span class="bar"></span></button>-->
+                    <a href="/member/login" class="btn btn-outline-secondary">Login</a>
                 </div>
             </div>
         </header>
         <div>
             <ul style="text-align: center;list-style: none;border-bottom: 1px solid #e5e5e5;">
-                <li style="display: inline-block; padding: 10px;"><a href="#" style="text-decoration: none;color: black;">test</a></li>
-                <li style="display: inline-block; padding: 10px;"><a href="#" style="text-decoration: none;color: black;">test</a></li>
-                <li style="display: inline-block; padding: 10px;"><a href="#" style="text-decoration: none;color: black;">test</a></li>
-                <li style="display: inline-block; padding: 10px;"><a href="#" style="text-decoration: none;color: black;">test</a></li>
+                <li style="display: inline-block; padding: 10px;">
+                    <a href="#" style="text-decoration: none;color: black;">Menu 1</a>
+                </li>
+                <li style="display: inline-block; padding: 10px;">
+                    <a href="#" style="text-decoration: none;color: black;">Menu 2</a>
+                </li>
+                <li style="display: inline-block; padding: 10px;">
+                    <a href="#" style="text-decoration: none;color: black;">Menu 3</a>
+                </li>
+                <li style="display: inline-block; padding: 10px;">
+                    <a href="#" style="text-decoration: none;color: black;">Menu 4</a>
+                </li>
             </ul>
         </div>
     </div>
