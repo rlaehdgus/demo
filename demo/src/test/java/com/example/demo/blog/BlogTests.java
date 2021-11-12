@@ -3,13 +3,12 @@ package com.example.demo.blog;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import com.example.demo.entity.Blog;
-import com.example.demo.entity.BlogRepository;
+import com.example.demo.domain.Blog;
+import com.example.demo.domain.BlogRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

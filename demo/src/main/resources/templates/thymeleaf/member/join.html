@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{thymeleaf/layout/default_layout}">
+    <th:block layout:fragment="head">
+        <title>Spring Boot</title> <!--/* css */-->
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+        <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+        <link th:href="@{/css/member/form-validation.css}" rel="stylesheet"/>
+    </th:block>
+<body>
+    <div layout:fragment="content" class="content container">
+        <main>
+            <div class="py-5 text-center">
+                <h2>Register</h2>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-md-7 col-lg-12">
+                    <form class="needs-validation" th:action="@{/member/joinProc}" th:method="POST">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="username" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="username" name="name" placeholder="Username" value="" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="id" class="form-label">ID</label>
+                                <div class="input-group has-validation">
+                                    <input type="text" class="form-control" id="id" name="id" placeholder="User ID" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="********">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="RePassword" class="form-label">RePassword</label>
+                                <input type="password" class="form-control" id="RePassword" placeholder="********">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="01012345678" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Gender</h4>
+
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="male" name="gender" type="radio" class="form-check-input" value="M" checked required>
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="female" name="gender" type="radio" class="form-check-input" value="F" required>
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Countine to signup</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script th:src="@{/js/member/form-validation.js}"></script>
+    <!--<script th:src="@{/js/blog/bootstrap.js}"></script>-->
+</body>
+</html>

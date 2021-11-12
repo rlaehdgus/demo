@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan( basePackages = {"com/example/demo/member"} )
+@MapperScan( basePackages = {"com/example/demo/"} )
 @PropertySource("classpath:/application.properties")
 public class DatabaseConfig {
 
