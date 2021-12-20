@@ -22,10 +22,9 @@
                             <path d="M21 21l-5.2-5.2"></path>
                         </svg>
                     </a>
-<!--                    <span sec:authentication="Username">Username</span>-->
                     <a sec:authorize="isAnonymous()" th:href="@{/member/login}" class="btn btn-outline-secondary">Login</a>
+                    <a sec:authorize="hasAnyRole('ROLE_MEMBER','ROLE_DEVELOPER')" th:href="@{/member/myInfo}" class="btn btn-outline-secondary" style="margin-right: 10px;">MyInfo</a>
                     <a sec:authorize="isAuthenticated()" th:href="@{/member/logout}" class="btn btn-outline-secondary">Logout</a>
-                    <a sec:authorize="hasAuthority('ROLE_MEMBER')" th:href="@{/member/myInfo}" class="btn btn-outline-secondary">MyInfo</a>
                 </div>
             </div>
         </header>

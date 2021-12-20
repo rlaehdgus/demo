@@ -13,6 +13,15 @@ public class MainController {
     public ModelAndView main() {
         ModelAndView mav = new ModelAndView();
 
+        mav.setViewName("thymeleaf/index");
+
+        return mav;
+    }
+
+    @GetMapping("/list")
+    public ModelAndView list() {
+        ModelAndView mav = new ModelAndView();
+
         // if 로그인 여부 체크 (미로그인 시 return false 처리)
 
         // 메인 이미지 데이터 조회

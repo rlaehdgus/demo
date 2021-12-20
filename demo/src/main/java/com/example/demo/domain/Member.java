@@ -12,7 +12,6 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 public class Member {
-    @Column(name = "mSeq")
     private Long mSeq;
     private String name;
     private String id;
@@ -36,8 +35,7 @@ public class Member {
     }
 
     @Builder
-    public Member(Long mSeq, String name, String id, String password, String address, String gender, String phone) {
-        this.mSeq = mSeq;
+    public Member(String name, String id, String password, String address, String gender, String phone) {
         this.name = name;
         this.id = id;
         this.password = password;

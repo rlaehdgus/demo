@@ -27,7 +27,6 @@ public class MemberServiceImpl implements UserDetailsService {
 
     @Transactional
     public void joinUser(Member member) {
-        System.out.println("test");
         // 비밀번호 암호화
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         member.setPassword(passwordEncoder.encode(member.getPassword()));
@@ -37,18 +36,16 @@ public class MemberServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
-        System.out.println("1");
-//        Optional<MemberEntity> userEntityWrapper =  memberRepository.findById(id);
         Optional<MemberEntity> userEntityWrapper = memberRepository.findById(id);
-        System.out.println("2");
         MemberEntity userEntity = userEntityWrapper.get();
-        System.out.println("userEntity: "+userEntity);
 
         List<GrantedAuthority> authorities = new ArrayList<>();
 
-        // 계정이
-        if (("kimdh").equals(id)){
+        // 계정으로 권한 구분
+        if (("admindhkim").equals(id)){
            authorities.add(new SimpleGrantedAuthority(Role.ADMIN.getValue()));
+        } else if(("develdhkim").equals(id)) {
+            authorities.add(new SimpleGrantedAuthority(Role.DEVELOPER.getValue()));
         } else {
             authorities.add(new SimpleGrantedAuthority(Role.MEMBER.getValue()));
         }

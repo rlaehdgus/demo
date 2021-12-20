@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) {
         // static 디렉토리의 하위 파일 목록은 인증 무시
-        web.ignoring().antMatchers("/css/**", "/js/**", "/admin/**");
+        web.ignoring().antMatchers("/css/**", "/js/**", "/admin/css/**", "/admin/js/**");
     }
 
     @Override
@@ -43,6 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/member/login")
                 .defaultSuccessUrl("/blog/main")
+                .usernameParameter("id")
                 .permitAll()
             .and()
                 //로그아웃 설정
