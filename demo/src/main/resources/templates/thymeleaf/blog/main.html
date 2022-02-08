@@ -18,12 +18,35 @@
 <th:block layout:fragment="header" th:include="@{/thymeleaf/fragments/header}"></th:block>
 
     <div id="main">
+        <!-- Insert Atea -->
+        <div class="feed-post">
+            <div class="header">
+                <div class="contArea">
+                    <textarea style="resize: none;height: 100%;"></textarea>
+                </div>
+                <div class="btnArea">
+                    <button onclick="alert('준비중입니다.');">글 게시</button>
+                    <button onclick="alert('준비중입니다.');">사진/동영상</button>
+                    <button onclick="alert('준비중입니다.');">태그</button>
+                </div>
+            </div>
+        </div>
+        <!-- Insert Area -->
+
+        <article class="post" style="height: 500px;">
+            <div style="text-align: center;">
+                <img src="/images/common/exclation.png" alt="느낌표" style="width: 200px;margin: 50px 0px 40px 0px;">
+                <h1 style="font-size: 25px;">게시된 글이 없습니다.</h1>
+            </div>
+        </article>
+
         <!-- Post -->
         <article class="post">
             <header>
                 <div class="title">
                     <h2><a href="/blog/view">Magna sed adipiscing</a></h2>
                     <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+
                 </div>
                 <div class="meta">
                     <time class="published" datetime="2015-11-01">November 1, 2015</time>

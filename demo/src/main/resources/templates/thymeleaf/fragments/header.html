@@ -1,7 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <header id="header">
-    <h1><a href="index.html">Future Imperfect</a></h1>
+    <h1><a href="/blog/list">Feed Blog</a></h1>
     <nav class="links">
         <ul>
             <li><a href="#">Lorem</a></li>
@@ -68,8 +69,17 @@
 
     <!-- Actions -->
     <section>
+        <!--<div class="form-floating" sec:authorize="isAuthenticated()">
+            <label for="name">Username</label>
+            <span sec:authentication="name" id="name"></span>
+        </div>-->
+        <div sec:authorize="isAuthenticated()" style="text-align: right;">
+            <span sec:authentication="name"></span>
+        </div>
         <ul class="actions stacked">
-            <li><a href="#" class="button large fit">Log In</a></li>
+            <li><a sec:authorize="isAnonymous()" th:href="@{/member/login}" class="button large fit">Login</a></li>
+            <li><a sec:authorize="hasAnyRole('MEMBER')" th:href="@{/mypage/info}" class="button large fit" style="margin-right: 10px;">MyInfo</a></li>
+            <li><a sec:authorize="isAuthenticated()" th:href="@{/member/logout}" class="button large fit">Logout</a></li>
         </ul>
     </section>
 

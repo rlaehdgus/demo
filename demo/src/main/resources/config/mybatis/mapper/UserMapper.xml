@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.domain.UserRepository">
+    <select id="getUser" parameterType="com.example.demo.domain.User" resultType="com.example.demo.domain.User">
+        SELECT
+            m.m_seq
+            , m.name
+            , m.id
+            , m.password
+            , m.address
+            , m.gender
+            , m.phone
+            , m.auth_type
+            , m.del_yn
+            , m.cre_dt
+        FROM
+            blog_member m
+        WHERE
+            m.id = #{id}
+        AND
+            m.del_yn = 'N'
+    </select>
+
+    <insert id="userInsert" parameterType="com.example.demo.domain.User">
+        INSERT INTO blog_member (name, id, password, address, gender, phone, auth_type, del_yn, cre_dt)
+        VALUES (#{name}, #{id}, #{password}, #{address}, #{gender}, #{phone}, 'M', 'N', NOW())
+    </insert>
+</mapper>

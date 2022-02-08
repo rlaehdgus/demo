@@ -2,19 +2,10 @@ package com.example.demo.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Entity(name = "bbs_info")
 public class Blog {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     // 게시글 고유번호
     private Long b_seq;
     // 게시판 종류

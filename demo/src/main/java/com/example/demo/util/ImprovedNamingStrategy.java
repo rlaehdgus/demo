@@ -1,13 +1,10 @@
 package com.example.demo.util;
 
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.boot.model.naming.Identifier;
-import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
-import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
 
-public class ImprovedNamingStrategy implements PhysicalNamingStrategy {
+public class ImprovedNamingStrategy /*implements PhysicalNamingStrategy*/ {
 
-    @Override
+   /* @Override
     public Identifier toPhysicalCatalogName(Identifier identifier, JdbcEnvironment jdbcEnv) {
         return convert(identifier);
     }
@@ -40,5 +37,5 @@ public class ImprovedNamingStrategy implements PhysicalNamingStrategy {
         String replacement = "$1$2";
         String newName = identifier.getText().replaceAll(regex, replacement).toLowerCase();
         return Identifier.toIdentifier(newName);
-    }
+    }*/
 }

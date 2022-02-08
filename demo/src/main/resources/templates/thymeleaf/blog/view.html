@@ -9,216 +9,39 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Blog Template · Bootstrap v5.1</title>
+    <title>Feed Blog | view</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
-
-    <link th:href="@{/css/blog/bootstrap.min.css}" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link th:href="@{/css/blog/blog.css}" rel="stylesheet">
+    <link th:href="@{/css/blog/main.css}" rel="stylesheet">
 </head>
 <body>
-<th:block layout:fragment="header" th:include="@{/thymeleaf/fragments/blogHeader}"></th:block>
-
-<main class="container" layout:fragment="content">
-    <div class="row g-5">
-        <div class="col-md-12">
-            <div style="float:right;margin-bottom: 10px;">
-                <button type="button" class="btn btn-outline-warning">Update</button>
-                <button type="button" class="btn btn-outline-danger">Delete</button>
-            </div>
-            <div style="margin-bottom: 50px;">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="400"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-                     preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image Area</text>
-                </svg>
-                <br/><p style="text-align: center;">Title</p>
-                <br/><p style="text-align: center;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <!--<div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>-->
-            </div>
-            <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group" role="group" aria-label="First group">
-                    <button type="button" class="btn btn-outline-secondary">Prev Page</button>
+<div id="wrapper" layout:fragment="content">
+<th:block layout:fragment="header" th:include="@{/thymeleaf/fragments/header}"></th:block>
+    <div id="main">
+        <!-- Post -->
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2><a href="#">Magna sed adipiscing</a></h2>
+                    <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
                 </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-outline-secondary">List Page</button>
+                <div class="meta">
+                    <time class="published" datetime="2015-11-01">November 1, 2015</time>
+                    <a href="#" class="author"><span class="name">Jane Doe</span><img th:src="@{/images/avatar.jpg}" alt="" /></a>
                 </div>
-                <div class="input-group">
-                    <button type="button" class="btn btn-outline-secondary">Next Page</button>
-                </div>
-            </div>
-
-            <hr style="margin-top: 55px;">
-
-            <h3 class="mb-4 fst-italic border-bottom" style="padding: 2rem 0 1.5rem 0;">
-                Comments
-            </h3>
-            <div class="col-md-12">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm position-relative"
-                     style="margin-bottom: 60px;">
-                    <form class="row g-3">
-                        <div class="col-md-12" style="padding-right: 20px;padding-left: 30px;">
-                            <h4 style="padding-bottom: 20px;">Write</h4>
-                            <div class="col-md-12">
-                                <label for="inputEmail4" class="form-label">제목</label>
-                                <input type="email" class="form-control" id="inputEmail4">
-                            </div>
-                        </div>
-                        <div class="col-md-12" style="margin-top: 30px;padding-right: 20px;padding-left: 30px;">
-                            <label for="inputAddress" class="form-label">내용</label>
-                            <textarea type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
-                                      style="margin-top: 0px; margin-bottom: 0px; height: 90px;"></textarea>
-                        </div>
-                        <div class="col-md-12" style="padding: 10px 20px 20px 0;">
-                            <button type="submit" class="btn btn-primary" style="float: right;">Commit</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">&gt; 테스트 제목에 해당하는 댓글</strong>
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목(댓글)</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목2</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목3</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목4</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">&gt; 테스트 제목4에 해당하는 댓글</strong>
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목(댓글1)</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">&gt; 테스트 제목4에 해당하는 댓글</strong>
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목(댓글2)</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">&gt; 테스트 제목(댓글2)에 해당하는 댓글</strong>
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목(댓글1-1)</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목6</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">&gt; 테스트 제목6에 해당하는 댓글</strong>
-                        <h3 style="padding-bottom: 20px;font-family: var(--bs-body-font-family);">테스트 제목(댓글1)</h3>
-                        <p class="card-text mb-auto">댓글 내용 테스트</p>
-                        <div class="mb-1 text-muted" style="text-align: right; padding: 10px 10px 0 0;">홍길동 / 2021-10-01
-                            16:30:00
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
+            </header>
+            <span class="image featured"><img th:src="@{/images/pic01.jpg}" alt="" /></span>
+            <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+            <p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
+            <footer>
+                <ul class="stats">
+                    <li><a href="#">General</a></li>
+                    <li><a href="#" class="icon solid fa-heart">28</a></li>
+                    <li><a href="#" class="icon solid fa-comment">128</a></li>
                 </ul>
-            </nav>
-        </div>
+            </footer>
+        </article>
     </div>
-
-</main>
-
-<th:block layout:fragment="footer" th:include="@{/thymeleaf/fragments/blogFooter}"></th:block>
+    <th:block th:include="@{/thymeleaf/fragments/footer}"></th:block>
+</div>
 </body>
 </html>

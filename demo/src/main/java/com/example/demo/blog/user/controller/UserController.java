@@ -1,23 +1,20 @@
-package com.example.demo.member.controller;
+package com.example.demo.blog.user.controller;
 
-import com.example.demo.domain.Member;
-import com.example.demo.member.service.MemberService;
-import com.example.demo.member.service.MemberServiceImpl;
+import com.example.demo.domain.User;
+import com.example.demo.blog.user.service.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @AllArgsConstructor
 @RequestMapping(value = "/member")
-public class MemberController {
+public class UserController {
 
-    private MemberServiceImpl memberServiceImpl;
+    private UserService userService;
 
     @GetMapping(value = "/login")
     public ModelAndView login() {
@@ -43,7 +40,7 @@ public class MemberController {
 
     // 로그인 Proc
     @PostMapping(value = "/joinProc")
-    public ModelAndView joinProc(Member member) {
+    public ModelAndView joinProc(User user) {
         ModelAndView mav = new ModelAndView();
 
         // if 로그인 여부 체크 (로그인이 되어있을 경우 메인화면으로 팅겨내기)
@@ -55,7 +52,8 @@ public class MemberController {
 
             // success
             // 입력한 정보 insert
-            memberServiceImpl.joinUser(member);
+            //System.out.println("user: "+user);
+            userService.joinUser(user);
             mav.setViewName("redirect:/member/login");
 
             // fail

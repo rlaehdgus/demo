@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Feed Blog | Login</title>
+    <title>Feed Blog | Mypage</title>
 
     <link th:href="@{/css/blog/main.css}" rel="stylesheet">
 </head>
@@ -21,25 +21,49 @@
         <!--<div style="text-align: center;font-size: 25px;">
             <h1><a href="/blog/list">Feed Blog</a></h1>
         </div>-->
-        <article class="post" style="width: 50%;margin: 0 auto 3em;">
+        <article class="post" style="width: 70%;margin: 0 auto 3em;">
             <main class="form-signin">
-                <form th:action="@{/member/login}" th:method="POST">
-                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-                    <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+                <form th:action="@{/member/infoUpdateProc}" th:method="POST">
+<!--                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
+                    <h1 class="h3 mb-3 fw-normal text-center">Mypage</h1>
 
+                    <div class="form-floating">
+                        <label for="name">Username</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Hong GilDong" th:value="${}">
+                    </div>
                     <div class="form-floating">
                         <label for="id">ID</label>
                         <input type="text" class="form-control" id="id" name="id" placeholder="name@example.com">
                     </div>
                     <div class="form-floating">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="********">
+                    </div>
+                    <div class="form-floating">
+                        <label for="NewPassword">New Password</label>
+                        <input type="password" class="form-control" id="NewPassword" name="NewPassword" placeholder="********">
+                    </div>
+                    <div class="form-floating">
+                        <label for="NewRePassword">New Password Reply</label>
+                        <input type="password" class="form-control" id="NewRePassword" name="NewRePassword" placeholder="********">
+                    </div>
+                    <div class="form-floating">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-floating">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="address">
+                    </div>
+                    <div class="form-floating">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="01000000000">
                     </div>
 
-                    <button id="loginBtn" type="submit">Login</button>
-                    <div class="checkbox mb-3 text-center" style="margin-top: 0.5em;">
-                        <a href="/member/join">Not a member?</a>
-                    </div>
+                    <button id="loginBtn" type="submit">MyInfo Update</button>
                 </form>
             </main>
         </article>

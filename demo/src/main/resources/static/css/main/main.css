@@ -1079,3 +1079,11 @@ input, select, textarea {
 		#header nav {
 			padding: 0 1em;
 		} }
+
+	.text-center {
+		text-align: center;
+	}
+
+	.width-full {
+		width: 100%;
+	}
