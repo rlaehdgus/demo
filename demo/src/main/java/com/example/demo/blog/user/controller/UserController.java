@@ -38,7 +38,7 @@ public class UserController {
         return mav;
     }
 
-    // 로그인 Proc
+    // 회원가입 Proc
     @PostMapping(value = "/joinProc")
     public ModelAndView joinProc(User user) {
         ModelAndView mav = new ModelAndView();
@@ -64,4 +64,6 @@ public class UserController {
 
         return mav;
     }
+    
+    // 로그인 Proc
 }

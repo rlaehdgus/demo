@@ -2,29 +2,61 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.domain.UserRepository">
+<mapper namespace="com.example.demo.blog.user.service.impl.UserRepository">
     <select id="getUser" parameterType="com.example.demo.domain.User" resultType="com.example.demo.domain.User">
-        SELECT
-            m.m_seq
-            , m.name
-            , m.id
-            , m.password
-            , m.address
-            , m.gender
-            , m.phone
-            , m.auth_type
-            , m.del_yn
-            , m.cre_dt
-        FROM
-            blog_member m
+        SELECT 
+			T1.USER_NO
+		    , T1.USER_ID
+		    , T1.USER_NAME
+		    , T1.USER_PWD
+		    , T1.USER_EMAIL
+		    , T1.USER_PHONE
+		    , T1.USER_ADDR
+		    , T1.USER_GENDER
+		    , T1.LAST_LOGIN_DT
+		    , T1.UPD_BEFORE_PWD_DT
+		    , T1.UPD_BEFORE_PWD
+		    , T1.USE_YN
+		    , T1.LOCK_YN
+		    , T1.REG_DT
+		    , T1.UPD_DT
+		FROM TB_MEMBER T1
         WHERE
-            m.id = #{id}
+            T1.USER_ID = #{id}
         AND
-            m.del_yn = 'N'
+            T1.USE_YN = 'Y'
+        AND
+        	T1.LOCK_YN = 'N'
     </select>
 
     <insert id="userInsert" parameterType="com.example.demo.domain.User">
-        INSERT INTO blog_member (name, id, password, address, gender, phone, auth_type, del_yn, cre_dt)
-        VALUES (#{name}, #{id}, #{password}, #{address}, #{gender}, #{phone}, 'M', 'N', NOW())
+        INSERT INTO TB_MEMBER 
+        (
+        	USER_ID
+        	, USER_PWD
+        	, USER_NAME
+        	, USER_EMAIL
+        	, USER_PHONE
+        	, USER_ADDR
+        	, USER_GENDER
+        	, UPD_BEFORE_PWD_DT
+        	, UPD_BEFORE_PWD
+        	, USE_YN
+        	, LOCK_YN
+        	, REG_DT
+        ) VALUES (
+        	#{userId}
+        	, #{userPwd}
+        	, #{userName}
+        	, #{userEmail}
+        	, #{userPhone}
+        	, #{userAddr}
+        	, #{userGender}
+        	, NOW()
+        	, #{userPwd}
+        	, 'Y'
+        	, 'N'
+        	, NOW()
+        )
     </insert>
 </mapper>

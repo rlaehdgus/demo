@@ -1,7 +1,9 @@
-package com.example.demo.domain;
+package com.example.demo.blog.user.service.impl;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+
+import com.example.demo.domain.User;
 
 @Repository(value = "UserRepository")
 @Mapper

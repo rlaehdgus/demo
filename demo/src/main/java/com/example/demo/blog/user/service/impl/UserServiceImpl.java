@@ -1,7 +1,8 @@
-package com.example.demo.blog.user.service;
+package com.example.demo.blog.user.service.impl;
 
 import com.example.demo.domain.User;
-import com.example.demo.domain.UserRepository;
+import com.example.demo.blog.user.service.UserService;
+import com.example.demo.blog.user.service.impl.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,10 +20,10 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void joinUser(User user) {
-//        System.out.println("user: "+ user);
+        //System.out.println("user: "+ user);
         // 비밀번호 암호화
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setUserPwd(passwordEncoder.encode(user.getUserPwd()));
 
         userRepository.userInsert(user);
     }
@@ -30,9 +31,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public void userUpdate(User user) {
         //비밀번호 입력 여부 확인
-        if(user.getPassword() != null) {
+        if(user.getUserPwd() != null) {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setUserPwd(passwordEncoder.encode(user.getUserPwd()));
         }
 
 //        userRepository.userUpdate(user);

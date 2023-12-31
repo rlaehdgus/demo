@@ -9,16 +9,19 @@ import java.time.LocalDateTime;
 @ToString
 @NoArgsConstructor
 public class User {
-    private Long m_seq;
-    private String name;
-    private String id;
-    private String password;
-    private String address;
-    private String gender;
-    private String phone;
-    private String auth_type;
-    private String del_yn;
-    private LocalDateTime cre_dt;
-    private LocalDateTime upd_dt;
-    private LocalDateTime del_dt;
+    private Long userNo;
+    private String userName;
+    private String userId;
+    private String userPwd;
+    private String userEmail;
+    private String userPhone;
+    private String userAddr;
+    private String userGender;
+    private LocalDateTime lastLoginDt;
+    private LocalDateTime updBeforePwdDt;
+    private String updBeforePwd;
+    private String useYn;
+    private String lockYn;
+    private LocalDateTime regDt;
+    private LocalDateTime updDt;
 }

@@ -1,7 +1,7 @@
 package com.example.demo.security;
 
 import com.example.demo.domain.User;
-import com.example.demo.domain.UserRepository;
+import com.example.demo.blog.user.service.impl.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -29,7 +29,7 @@ public class BlogUserDetailsService implements UserDetailsService, Serializable 
         if(user == null) {
             throw new UsernameNotFoundException(id);
         }
-        System.out.println("user: "+user);
+        
         // 조회한 정보를 blogUser에 담는다.
         // 만약 파라미터를 추가해야한다면 blogUser을 먼저 수정한다.
         BlogUser blogUser = new BlogUser(user);

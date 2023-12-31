@@ -23,19 +23,29 @@ public class BlogUser extends User implements UserDetails, CredentialsContainer 
     private Collection<? extends GrantedAuthority> authorities;
 
     public BlogUser(User user) {
-        setM_seq(user.getM_seq());
-        setName(user.getName());
-        setId(user.getId());
-        setPassword(user.getPassword());
-        setAddress(user.getAddress());
-        setPhone(user.getPhone());
-        setGender(user.getGender());
-        setAuth_type(user.getAuth_type());
-        setCre_dt(user.getCre_dt());
-        setUpd_dt(user.getUpd_dt());
-        this.username = getId();
-        this.password = user.getPassword();
-        System.out.println("auth_type: "+ getAuth_type());
+    	setUserNo(user.getUserNo());
+    	setUserName(user.getUserName());
+    	setUserId(user.getUserId());
+    	setUserEmail(user.getUserEmail());
+    	setUserPhone(user.getUserPhone());
+    	setUserAddr(user.getUserAddr());
+    	setUserGender(user.getUserGender());
+    	setRegDt(user.getRegDt());
+    	setUpdDt(user.getUpdDt());
+    	
+    	
+//        setM_seq(user.getM_seq());
+//        setName(user.getName());
+//        setId(user.getId());
+//        setPassword(user.getPassword());
+//        setAddress(user.getAddress());
+//        setPhone(user.getPhone());
+//        setGender(user.getGender());
+//        setAuth_type(user.getAuth_type());
+//        setCre_dt(user.getCre_dt());
+//        setUpd_dt(user.getUpd_dt());
+        this.username = getUserId();
+        this.password = user.getUserPwd();
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("MEMBER");
         this.authorities = Collections.singletonList(grantedAuthority);
     }

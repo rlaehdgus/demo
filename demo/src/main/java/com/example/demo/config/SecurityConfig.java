@@ -52,13 +52,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 페이지 권한 설정
                 .antMatchers("/blog/main").permitAll()
+                .antMatchers("/member/join").permitAll()
+                .antMatchers("/member/joinProc").permitAll()
                 .antMatchers("/**").authenticated()
                 .and()
             // 로그인 설정
             .formLogin()
                 .loginPage("/member/login")
 //                .defaultSuccessUrl("/blog/list")
-                .usernameParameter("id")
+                .usernameParameter("userId")
                 .permitAll()
                 .and()
             //로그아웃 설정

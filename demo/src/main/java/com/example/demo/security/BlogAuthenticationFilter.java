@@ -20,8 +20,8 @@ public class BlogAuthenticationFilter extends AbstractAuthenticationProcessingFi
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,
                                                 HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
-        String id = request.getParameter("id");
-        String credentials = request.getParameter("password");
+        String id = request.getParameter("userId");
+        String credentials = request.getParameter("userPwd");
 
         return getAuthenticationManager().authenticate(new BlogAuthenticationToken(id, credentials));
     }
