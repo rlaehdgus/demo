@@ -18,6 +18,7 @@ import java.util.Collections;
 public class BlogUser extends User implements UserDetails, CredentialsContainer {
     private static final long serialVersionUID = 3718162515893387291L;
 
+    private Long userNo;
     private String username;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
@@ -44,6 +45,7 @@ public class BlogUser extends User implements UserDetails, CredentialsContainer 
 //        setAuth_type(user.getAuth_type());
 //        setCre_dt(user.getCre_dt());
 //        setUpd_dt(user.getUpd_dt());
+    	this.userNo = getUserNo();
         this.username = getUserId();
         this.password = user.getUserPwd();
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("MEMBER");

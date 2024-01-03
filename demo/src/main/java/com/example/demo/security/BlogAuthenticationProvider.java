@@ -35,7 +35,7 @@ public class BlogAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("password is not matched!");
         }
 
-        return new BlogAuthenticationToken(id, password, user.getAuthorities());
+        return new BlogAuthenticationToken(user.getUserNo(), id, password, user.getAuthorities());
     }
 
     // 토큰 타입과 일치할 때 인증

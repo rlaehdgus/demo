@@ -6,11 +6,13 @@ import org.springframework.security.core.GrantedAuthority;
 import java.util.Collection;
 
 public class BlogAuthenticationToken extends AbstractAuthenticationToken {
+	private Long userNo;
     private String id;
     private String credentials;
 
-    public BlogAuthenticationToken(String id, String credentials, Collection<? extends GrantedAuthority> authorities) {
+    public BlogAuthenticationToken(Long userNo, String id, String credentials, Collection<? extends GrantedAuthority> authorities) {
         super(authorities);
+        this.userNo = userNo;
         this.id = id;
         this.credentials = credentials;
     }
